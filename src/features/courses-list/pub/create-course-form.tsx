@@ -39,6 +39,7 @@ export function CreateCourseForm({
     defaultValues: {
       name: "",
       description: "",
+      price: 0,
     },
   });
 
@@ -49,7 +50,7 @@ export function CreateCourseForm({
           startCreateTransition(async () => {
             createCourseAction(data, revalidatePagePath);
           });
-          form.reset();
+          // form.reset();
         })}
         className={cn(className, "space-y-4")}
       >
@@ -74,6 +75,19 @@ export function CreateCourseForm({
               <FormLabel>Описание</FormLabel>
               <FormControl>
                 <Textarea {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="price"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Цена</FormLabel>
+              <FormControl>
+                <Input type="number" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

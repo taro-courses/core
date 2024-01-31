@@ -29,6 +29,7 @@ export function CourseItem({
       <CardHeader>
         <CardTitle>{course.name}</CardTitle>
         <CardDescription>{course.description}</CardDescription>
+        <CardTitle>{course.price}</CardTitle>
       </CardHeader>
       <CardFooter>
         <Button
